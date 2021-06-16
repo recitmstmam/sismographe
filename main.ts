@@ -1,8 +1,9 @@
 radio.setGroup(1)
+let Vibrations = input.acceleration(Dimension.Strength) - 1023
 basic.forever(function () {
     led.plotBarGraph(
-    input.acceleration(Dimension.Strength) - 1023,
+    Vibrations,
     0
     )
-    radio.sendValue("name", 0)
+    radio.sendValue("Vibrations", Vibrations)
 })
