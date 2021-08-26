@@ -3,7 +3,7 @@ let Vibrations = 0
 radio.setGroup(1)
 basic.forever(function () {
     Vibrations = input.acceleration(Dimension.Strength) - 1023
-    Niveau = Vibrations * 100 / 1023
+    Niveau = Vibrations * 100 / 1023 / 2
     radio.sendValue("Niveau", Niveau)
     led.plotBarGraph(
     Niveau,
